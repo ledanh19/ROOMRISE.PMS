@@ -1,44 +1,52 @@
-# CSL Laravel Starter Kit
+# ROOMRISE.PMS
 
-> 💡 **Demo:** You can preview the full version of this project at: [https://vuexy.phuongluong.space](https://vuexy.phuongluong.space)
->
-> 📦 **Full Source Code:** View the complete implementation here: [https://bitbucket.org/corsivalabpteltd/vuexy\_full\_version](https://bitbucket.org/corsivalabpteltd/vuexy_full_version)
+**ROOMRISE.PMS** - Property Management System for hotel and accommodation management
 
-**Version:** 1.0.1
+## Overview
 
-A Laravel starter kit designed for CSL internal projects. Includes ready-to-use folder structure, permissions, frontend layout (Inertia.js + Vue 3), and common essential packages.
+ROOMRISE.PMS is a comprehensive property management system designed for hotels, resorts, and accommodation businesses. Built with Laravel and Vue.js, it provides a modern, intuitive interface for managing bookings, rooms, customers, and operations.
 
----
+## Technology Stack
+
+### Backend
+- **PHP 8.2** with Laravel Framework
+- **MySQL/PostgreSQL** Database
+- RESTful API Architecture
+- Inertia.js for seamless SPA experience
+
+### Frontend
+- **Vue 3** with Composition API
+- **Vuetify 3** Material Design Components
+- **Inertia.js** for server-driven single page applications
+- **Vite** for fast development and optimized builds
+- **TypeScript** support
+
+### Key Features
+- 🏨 **Property Management**: Manage multiple properties, rooms, and room types
+- 📅 **Booking System**: Complete booking lifecycle management
+- 👥 **Customer Management**: Track customer information and booking history
+- 💰 **Financial Management**: Income, expenses, payments, and invoicing
+- 📊 **Reporting & Analytics**: Comprehensive reports and dashboards
+- 🔗 **Channel Manager Integration**: Channex integration for OTA distribution
+- 🔐 **Role-Based Access Control**: Granular permissions and user management
+- 📱 **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
+- 🌐 **Multi-language Support**: i18n ready (Vietnamese, English)
 
 ## System Requirements
 
-* PHP **8.2**
-* Composer
-* Node.js **>= 20.10.0**
-* MySQL / PostgreSQL
-* NPM or Yarn
-
----
+- PHP **8.2** or higher
+- Composer
+- Node.js **>= 20.10.0**
+- MySQL **5.7+** / PostgreSQL **12+**
+- NPM or PNPM
 
 ## Installation
 
-Follow the steps below to set up your project from the starter kit:
-
-### Step 1: Clone and Initialize Your Project
-
-> ⚠️ **Important:** Do not commit directly to the original repository. Instead, create your own Git repository using this starter kit as a base.
->
-> ⚠️ **Note:** Make sure to replace `your-project-name` with your desired folder name, and `your-repo-url` with the SSH or HTTPS URL of your new Git repository.
+### Step 1: Clone the Repository
 
 ```bash
-git clone git@bitbucket.org:corsivalabpteltd/csl_laravel_starter_kit.git your-project-name
-cd your-project-name
-rm -rf .git
-git init
-git remote add origin git@your-repo-url.git
-git add .
-git commit -m "Initial commit from starter kit"
-git push -u origin main
+git clone https://github.com/ledanh19/ROOMRISE.PMS.git
+cd ROOMRISE.PMS
 ```
 
 ### Step 2: Install PHP Dependencies
@@ -53,7 +61,7 @@ composer install
 cp .env.example .env
 ```
 
-Update the `.env` file with your database credentials, app name, mail configuration, etc.
+Update the `.env` file with your database credentials, app name, and other configurations.
 
 ### Step 4: Generate Application Key
 
@@ -63,203 +71,169 @@ php artisan key:generate
 
 ### Step 5: Set Up Database
 
-Make sure your database is created and credentials are correct in `.env`.
+1. Create a new database for the project
+2. Import the database schema from `pms(2).sql`:
 
 ```bash
-php artisan migrate --seed
+mysql -u your_username -p your_database_name < "pms(2).sql"
 ```
 
-After running the seeder, you can log in using the default admin credentials:
-
-* **Email:** [admin@angiapms.com](mailto:admin@angiapms.com)
-* **Password:** Password123
+Or use your preferred database management tool to import the SQL file.
 
 ### Step 6: Install Frontend Dependencies
 
 ```bash
 npm install
-npm run dev     # Use npm run build for production
+# or
+pnpm install
 ```
 
-### Step 7: Start the Laravel Development Server
+### Step 7: Build Frontend Assets
+
+For development:
+```bash
+npm run dev
+```
+
+For production:
+```bash
+npm run build
+```
+
+### Step 8: Start the Laravel Development Server
 
 ```bash
 php artisan serve
 ```
 
-### Step 8: Set Up Roles and Permissions
+The application will be available at `http://127.0.0.1:8000`
 
-After completing the basic setup, you must define roles and permissions appropriate for your new project.
+## Default Login Credentials
 
-> ⚠️ **Important:** Roles and permissions must be manually created via the Admin Panel.
+After database setup, you can log in using:
 
-#### How to Create Roles & Permissions
+- **Email:** admin@angiapms.com
+- **Password:** Password123
 
-1. Log in using the default admin account:
+⚠️ **Important:** Change these credentials immediately after first login for security purposes.
 
-    * **Email:** [admin@angiapms.com](mailto:admin@angiapms.com)
-    * **Password:** `Password123`
+## Project Structure
 
-2. Go to the **Admin Panel** > **User Management** > **Roles**.
-
-3. Create necessary roles (e.g., `Admin`, `Manager`, `User`) based on your project requirements.
-
-4. Assign appropriate **permissions** to each role.
-
-5. You can then assign these roles to new or existing users.
-
----
-
-## API Documentation (Swagger UI)
-
-If your project includes an API and uses [Laravel Swagger](https://github.com/DarkaOnLine/L5-Swagger) or a similar package, you can enable auto-generated documentation as follows:
-
-### Step 1: Install Swagger (if not already installed)
-
-```bash
-composer require darkaonline/l5-swagger
+```
+ROOMRISE.PMS/
+├── app/                    # Laravel application code
+├── bootstrap/              # Laravel bootstrap files
+├── config/                 # Configuration files
+├── database/               # Migrations, seeders, factories
+├── public/                 # Public assets
+├── resources/              # Frontend resources
+│   ├── js/                 # Vue.js components and logic
+│   ├── styles/             # SCSS stylesheets
+│   └── views/              # Blade templates
+├── routes/                 # Application routes
+│   ├── Web/                # Web routes (organized by feature)
+│   └── Api/                # API routes
+├── storage/                # Application storage
+├── tests/                  # Test files
+├── vendor/                 # PHP dependencies
+├── node_modules/           # Node.js dependencies
+├── pms(2).sql             # Database schema and data
+├── composer.json           # PHP dependencies
+├── package.json            # Node.js dependencies
+├── vite.config.js          # Vite configuration
+└── themeConfig.js          # Theme configuration
 ```
 
-### Step 2: Publish the config
+## Key Modules
 
-```bash
-php artisan vendor:publish --provider="L5Swagger\L5SwaggerServiceProvider"
-```
+- **Dashboard**: Overview of bookings, occupancy, and revenue
+- **Bookings**: Create, manage, and track reservations
+- **Rooms**: Room inventory and availability management
+- **Customers**: Customer database and history
+- **Payments**: Payment processing and tracking
+- **Income/Expense**: Financial transaction management
+- **Reports**: Various business intelligence reports
+- **Channel Manager**: OTA integration via Channex
+- **User Management**: Users, roles, and permissions
+- **Settings**: Property configuration and system settings
 
-### Step 3: Generate the Swagger documentation
+## API Documentation
+
+API documentation is available via Swagger UI:
 
 ```bash
 php artisan l5-swagger:generate
 ```
 
-### Step 4: Access the documentation
+Then visit: `http://127.0.0.1:8000/api/documentation`
 
-Open your browser and visit:
+## Configuration
 
-```
-http://127.0.0.1:8000/api/documentation
-```
+### Theme Customization
 
-> ⚠️ Make sure to define your routes and controllers with proper OpenAPI annotations.
+Edit `themeConfig.js` to customize:
+- Application title and logo
+- Layout settings
+- Theme colors
+- Navigation behavior
+- Language settings
 
----
+### Color Scheme
 
-## Frontend Configuration
+Edit `resources/js/plugins/vuetify/theme.js` to customize primary colors and theme palettes.
 
-You can customize the look and feel of the application through the `themeConfig.js` file located at the root of the project.
+## Development
 
-This file controls layout settings, navigation type, theme behavior, supported languages, icon rendering, and more.
-
-### Key Properties
-
-* **App Title & Logo**: Modify the `title` and `logo` settings
-* **Layout Settings**: Adjust `contentWidth`, `contentLayoutNav`, and `overlayNavFromBreakpoint`
-* **Theme & Skin**: Toggle between light/dark/system themes and skins using `theme` and `skin`
-* **Internationalization (i18n)**: Enable/disable languages and set default locale in the `i18n` section
-* **Navbar & Footer**: Set type (`Sticky`, `Static`, etc.) and appearance of `navbar` and `footer`
-* **Navigation Sidebar**: Configure collapsed state, icons, and color scheme in `verticalNav`
-* **Icons**: Define default icons used across the UI in the `icons` section
-
-Example:
-
-```js
-export const { themeConfig, layoutConfig } = defineThemeConfig({
-    app: {
-        title: 'vuexy',
-        logo: h('div', { innerHTML: logo }),
-        theme: 'system',
-        skin: Skins.Default,
-        i18n: {
-            enable: false,
-            defaultLocale: 'en',
-        },
-    },
-    navbar: {
-        type: NavbarType.Sticky,
-    },
-    footer: {
-        type: FooterType.Static,
-    },
-});
-```
-
-For more options and advanced customization, refer to the comments in `themeConfig.js`.
-
----
-
-## Color Theme Customization
-
-You can modify the application's primary and theme colors in the file:
-
-**`resources/js/plugins/vuetify/theme.js`**
-
-### How to Change Primary Colors
-
-The following constants define the primary colors:
-
-```js
-export const staticPrimaryColor = '#7367F0'
-export const staticPrimaryDarkenColor = '#675DD8'
-```
-
-Update these values to apply your own branding colors.
-
-### How to Customize Light and Dark Theme Palettes
-
-Within the `themes` object, you can customize both `light` and `dark` themes:
-
-```js
-export const themes = {
-    light: {
-        dark: false,
-        colors: {
-            primary: staticPrimaryColor,
-            background: '#F8F7FA',
-            surface: '#fff',
-            ... // more colors
-        },
-        variables: {
-            border-color: '#2F2B3D',
-... // more CSS variables
-}
-},
-dark: {
-    dark: true,
-        colors: {
-        primary: staticPrimaryColor,
-            background: '#25293C',
-            surface: '#2F3349',
-    ... // more colors
-    },
-    variables: {
-        border-color: '#E1DEF5',
-    ... // more CSS variables
-    }
-}
-}
-```
-
-You can modify any of the `colors` and `variables` fields to match your design system.
-
-After updating, changes will apply across all Vuetify components.
-
----
-
-## Frontend Setup (Vue 3 + Inertia.js)
+### Running Tests
 
 ```bash
-npm install
-npm run dev      # or npm run build for production
+php artisan test
 ```
 
----
-
-## Useful Commands
-
-### Run Laravel Development Server
+### Code Linting
 
 ```bash
-php artisan serve
+npm run lint
 ```
 
+### Building for Production
+
+```bash
+npm run build
+php artisan optimize
+```
+
+## Deployment
+
+For production deployment:
+
+1. Set `APP_ENV=production` in `.env`
+2. Set `APP_DEBUG=false` in `.env`
+3. Configure proper database credentials
+4. Run `composer install --optimize-autoloader --no-dev`
+5. Run `npm run build`
+6. Run `php artisan config:cache`
+7. Run `php artisan route:cache`
+8. Run `php artisan view:cache`
+9. Set proper file permissions for `storage/` and `bootstrap/cache/`
+
+## Support
+
+For issues, questions, or contributions, please create an issue on the GitHub repository.
+
+## License
+
+This project is proprietary software. All rights reserved.
+
+## Credits
+
+Built with:
+- [Laravel](https://laravel.com/)
+- [Vue.js](https://vuejs.org/)
+- [Vuetify](https://vuetifyjs.com/)
+- [Inertia.js](https://inertiajs.com/)
+- [Vite](https://vitejs.dev/)
+
 ---
+
+**ROOMRISE.PMS** - Empowering hospitality businesses with modern technology.
