@@ -1,0 +1,146 @@
+{
+    "admin": [
+        "access-admin"
+    ],
+    "menu": [
+        "view-menu",
+        "create-menu",
+        "update-menu",
+        "delete-menu"
+    ],
+    "role": [
+        "view-role",
+        "create-role",
+        "update-role",
+        "delete-role"
+    ],
+    "permission": [
+        "view-permission",
+        "create-permission",
+        "update-permission",
+        "delete-permission"
+    ],
+    "theme-option": [
+        "view-theme-option",
+        "create-theme-option",
+        "update-theme-option",
+        "delete-theme-option"
+    ],
+    "user-list": [
+        "view-user-list",
+        "create-user-list",
+        "update-user-list",
+        "delete-user-list"
+    ],
+    "tin-nhan": [
+        "create-tin-nhan",
+        "view-tin-nhan",
+        "update-tin-nhan",
+        "delete-tin-nhan"
+    ],
+    "dat-phong": [
+        "create-dat-phong",
+        "view-dat-phong",
+        "update-dat-phong",
+        "delete-dat-phong"
+    ],
+    "cho-nghi": [
+        "create-cho-nghi",
+        "view-cho-nghi",
+        "update-cho-nghi",
+        "delete-cho-nghi"
+    ],
+    "loai-phong": [
+        "create-loai-phong",
+        "view-loai-phong",
+        "update-loai-phong",
+        "delete-loai-phong"
+    ],
+    "phong": [
+        "create-phong",
+        "view-phong",
+        "update-phong",
+        "delete-phong"
+    ],
+    "cai-dat-gia": [
+        "create-cai-dat-gia",
+        "view-cai-dat-gia",
+        "update-cai-dat-gia",
+        "delete-cai-dat-gia"
+    ],
+    "quan-ly-kenh": [
+        "create-quan-ly-kenh",
+        "view-quan-ly-kenh",
+        "update-quan-ly-kenh",
+        "delete-quan-ly-kenh"
+    ],
+    "khach-hang": [
+        "create-khach-hang",
+        "view-khach-hang",
+        "update-khach-hang",
+        "delete-khach-hang"
+    ],
+    "doi-tac": [
+        "create-doi-tac",
+        "view-doi-tac",
+        "update-doi-tac",
+        "delete-doi-tac"
+    ],
+    "quan-ly-thu-chi": [
+        "create-quan-ly-thu-chi",
+        "view-quan-ly-thu-chi",
+        "update-quan-ly-thu-chi",
+        "delete-quan-ly-thu-chi"
+    ],
+    "lich": [
+        "view-lich",
+        "create-lich",
+        "update-lich",
+        "delete-lich"
+    ],
+    "hotel-collect": [
+        "create-hotel-collect",
+        "view-hotel-collect",
+        "update-hotel-collect",
+        "delete-hotel-collect"
+    ],
+    "ota-collect": [
+        "create-ota-collect",
+        "view-ota-collect",
+        "update-ota-collect",
+        "delete-ota-collect"
+    ],
+    "cong-no": [
+        "create-cong-no",
+        "view-cong-no",
+        "update-cong-no",
+        "delete-cong-no"
+    ],
+    "daily-activity-report": [
+        "view-daily-activity-report"
+    ],
+    "management-report": [
+        "view-management-report"
+    ],
+    "payment-report": [
+        "view-payment-report"
+    ],
+    "revenue-report": [
+        "view-revenue-report"
+    ],
+    "dashboard-executive": [
+        "view-dashboard-executive"
+    ],
+    "dashboard-booking": [
+        "view-dashboard-booking"
+    ],
+    "dashboard-revenue": [
+        "view-dashboard-revenue"
+    ],
+    "dashboard-performance": [
+        "view-dashboard-performance"
+    ],
+    "home": [
+        "view-home"
+    ]
+}
